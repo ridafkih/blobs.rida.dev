@@ -72,6 +72,10 @@ Two headers are required for this API request, `x-id` should contain the value o
 }
 ```
 
+### `manifests/upload/:path*`
+
+### `manifests/:path*`
+
 ## Authentication
 
 You must set the `activated` to `TRUE` should you want to enable a set of credentials to upload to storage, otherwise a `403` will be returned.
