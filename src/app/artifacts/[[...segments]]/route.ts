@@ -18,10 +18,8 @@ export const PUT = async (request: NextRequest) => {
     ?.read()
     .then(async function process({ done, value }): Promise<File> {
       if (done) {
-        const blob = new Blob(chunks, { type: "application/gzip" });
-        const file = new File([blob], fileName, {
-          type: "application/gzip",
-        });
+        const blob = new Blob(chunks);
+        const file = new File([blob], fileName);
         return file;
       }
 
