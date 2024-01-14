@@ -16,7 +16,7 @@ This project allows you to easily publicly store blobs for usage in CI/CD pipeli
 
 ### Database Table Creation
 
-There is one table in the database, named `keys` which stores keys, their hash, and whether or not the key is activated and permitted to faciliate blob uploads.
+There is two tables in the database. `keys` stores credential information and whether or not the credentials are activated and permitted to faciliate blob uploads. `manifests` stores arbitrary JSON information.
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
@@ -26,6 +26,11 @@ CREATE TABLE keys (
     hash VARCHAR(255) NOT NULL,
     activated BOOLEAN NOT NULL DEFAULT FALSE,
     PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS manifests (
+  destination text PRIMARY KEY,
+  body jsonb NOT NULL
 );
 ```
 
