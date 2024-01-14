@@ -2,6 +2,16 @@
 
 This project allows you to easily publicly store blobs for usage in CI/CD pipelines, while upload functionality remains protected to the adjacent database owner.
 
+## Installation / Setup
+
+1. Fork this repository or clone it using `git clone git@github.com:ridafkih/blobs.rida.dev.git` and then upload it to your own GitHub.
+2. Log into [vercel.com](vercel.com), and on the dashboard click "Add new", project, and select your iteration of the project and initialize the project.
+3. Navigate to the project dashboard.
+4. Click on the "Storage" tab on the project navigator.
+5. Click "Connet Store," and create a PostgreSQL Database and a Blob Store.
+6. Run `vercel link` on your local project.
+7. Run `vercel env pull .env.development.local` on your local project.
+
 ## Configuration Notes
 
 ### Database Table Creation
