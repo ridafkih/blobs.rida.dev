@@ -5,7 +5,7 @@ import { type NextRequest, NextResponse } from "next/server";
 export const runtime = "edge";
 
 export const POST = async (request: NextRequest): Promise<NextResponse> => {
-  const destination = ["artifacts", ...request.nextUrl.pathname.split("/").slice(2)].join("/");
+  const destination = request.nextUrl.pathname.split("/").slice(1).join("/");
  
   try {
     const jsonResponse = await handleUpload({
